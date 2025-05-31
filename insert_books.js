@@ -13,6 +13,7 @@ const collectionName = 'books';
 // Sample book data
 const books = [
   {
+     {
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
     genre: 'Fiction',
@@ -40,14 +41,14 @@ const books = [
     price: 9.99,
     in_stock: true,
     pages: 180,
-    publisher: 'Charles Scribner\'s Sons'
+    publisher: "Charles Scribner's Sons"
   },
   {
     title: 'Brave New World',
     author: 'Aldous Huxley',
     genre: 'Dystopian',
     published_year: 1932,
-    price: 11.50,
+    price: 11.5,
     in_stock: false,
     pages: 311,
     publisher: 'Chatto & Windus'
@@ -87,20 +88,10 @@ const books = [
     author: 'J.R.R. Tolkien',
     genre: 'Fantasy',
     published_year: 1954,
-    price: 19.99,
+    price: 21.99,
     in_stock: true,
     pages: 1178,
     publisher: 'Allen & Unwin'
-  },
-  {
-    title: 'Animal Farm',
-    author: 'George Orwell',
-    genre: 'Political Satire',
-    published_year: 1945,
-    price: 8.50,
-    in_stock: false,
-    pages: 112,
-    publisher: 'Secker & Warburg'
   },
   {
     title: 'The Alchemist',
@@ -117,12 +108,13 @@ const books = [
     author: 'Herman Melville',
     genre: 'Adventure',
     published_year: 1851,
-    price: 12.50,
+    price: 12.5,
     in_stock: false,
     pages: 635,
     publisher: 'Harper & Brothers'
   },
   {
+    
     title: 'Wuthering Heights',
     author: 'Emily Brontë',
     genre: 'Gothic Fiction',
@@ -131,6 +123,7 @@ const books = [
     in_stock: true,
     pages: 342,
     publisher: 'Thomas Cautley Newby'
+  }
   }
 ];
 
