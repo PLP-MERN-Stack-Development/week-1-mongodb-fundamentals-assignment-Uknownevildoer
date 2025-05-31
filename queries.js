@@ -15,3 +15,8 @@ db.books.deleteOne({title: "Animal Farm"})
 
 //TASK 3
 db.books.find({ inStock: true, publishedYear: { $gt: 2010 } }, { _id: false, title: true, author: true, price: true }.skip(0).limit(5)
+
+//TASK 4
+db.books.aggregate([{$project: {decade: {$concat: [{ $toString: 
+  { $multiply: [ { $floor: { $divide: ["$published_year", 10] } }, 10 ] } },"s"]}}},
+  {$group: {_id: "$decade",count: { $sum: 1 }}},{$sort: { _id: 1 }}, {$project: {_id: 0,decade: "$_id",totalBooks: "$count"}}])
