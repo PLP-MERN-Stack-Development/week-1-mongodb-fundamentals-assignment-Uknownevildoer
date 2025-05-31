@@ -20,3 +20,8 @@ db.books.find({ inStock: true, publishedYear: { $gt: 2010 } }, { _id: false, tit
 db.books.aggregate([{$project: {decade: {$concat: [{ $toString: 
   { $multiply: [ { $floor: { $divide: ["$published_year", 10] } }, 10 ] } },"s"]}}},
   {$group: {_id: "$decade",count: { $sum: 1 }}},{$sort: { _id: 1 }}, {$project: {_id: 0,decade: "$_id",totalBooks: "$count"}}])
+
+//TASK 5
+db.books.createIndex({title: 1})
+db.books.createIndex({ author: 1, published_year: 1 })
+db.books.find({ author: "J.R.R. Tolkien", published_year: 1954 }).explain("executionStats")
